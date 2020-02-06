@@ -12,16 +12,18 @@ let clothes = (jacket+shirt+jeans);
 console.log(clothes);
 
 /* Ціла частина вартості товарів */
-let sumWithoutCents = (Math.floor(jacket) + Math.floor(shirt) + Math.floor(jeans));
+let sumWithoutCents = (Math.floor(jacket+shirt+jeans));
 console.log(sumWithoutCents);
 
 /* Заокруглена сума до сотень */
-let roundedSum = Math.round(Math.round(clothes / 100) * 100);
+let roundedSum = Math.ceil(Math.ceil(clothes / 100) * 100);
 console.log(roundedSum);
-  /* Чи є сума всіх товарів парним чи непарним числом */
+  
+/* Чи є сума всіх товарів парним чи непарним числом */
   let booleanValue = (Math.floor(clothes) % 2) == 0;
   console.log(booleanValue);
-/*   if (sumeWithoutCents & 1 ) {  console.log( "непарне" );
+
+  /*   if (sumeWithoutCents & 1 ) {  console.log( "непарне" );
   } else {
     console.log("парне" );
   } */
