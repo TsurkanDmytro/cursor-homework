@@ -1,18 +1,18 @@
-let jacket = 123.965;
-let shirt = 15.678;
-let jeans = 90.2345;
+const JACKET = 123.965;
+const SHIRT = 15.678;
+const JEANS = 90.2345;
 /* Максимальне число */
-let maxSum = Math.max(15.678,123.965,90.2345); 
+const maxSum = Math.max(15.678,123.965,90.2345); 
 
 /* Мінімальне число */
-let minSum = Math.min(15.678,123.965,90.2345);
+const minSum = Math.min(15.678,123.965,90.2345);
 
 /* Сума всіх товарів */
-let clothes = (jacket+shirt+jeans);
+const clothes = (JACKET+SHIRT+JEANS);
 console.log(clothes);
 
 /* Ціла частина вартості товарів */
-let sumWithoutCents = (Math.floor(jacket+shirt+jeans));
+let sumWithoutCents = (Math.floor(JACKET)+Math.floor(SHIRT)+Math.floor(JEANS));
 console.log(sumWithoutCents);
 
 /* Заокруглена сума до сотень */
