@@ -144,15 +144,17 @@ console.log(isPalindrome('ШАЛАШ'));
 Пример: deleteDuplicateLetter("Бисквит был очень нежный") -> "сквтлчьжй") */
 
 
-function deleteDuplicateLetter(str) {
-    let result = "";
-    for (let i = 0; i < str.length; i++) {
-        if (result.toLowerCase().indexOf(str[i])<0) {
-            result = result+str[i];
-        } 
-        else { continue; }
-    }
-    return result;
-}
 
+function deleteDuplicateLetter(str) {
+  let result = "";
+  let count = [];
+  for (let i = 0; i<str.length; i++) {
+    let reg = new RegExp(str[i], "ig" );
+    count = str.match(reg);
+    if (count.length === 1) {
+      result = result+str[i];
+    }
+  }
+  return result;
+}
 console.log(deleteDuplicateLetter("Бисквит был очень нежный"));
