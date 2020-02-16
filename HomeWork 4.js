@@ -28,7 +28,7 @@ const marks = [4, 5, 5, 3, 4, 5];
 function getThemes(pair, themes) {
   let pairThemes = [];
   for (let i = 0; i < pair.length; i++) {
-      pairThemes[i] = [pair[i], themes[i]].join(" - ");
+      pairThemes[i] = [pair[i].join(" + "), themes[i]];
   }
   return pairThemes;
 }
@@ -44,7 +44,7 @@ console.log(pairsWithThemes);
 function getStudentsMarks(students, marks) {
   let studentsMarks = [];
   for (let i = 0; i < students.length; i++) {
-    studentsMarks[i] = [students[i], marks[i]].join(" - ");
+    studentsMarks[i] = [students[i], marks[i]];
   }
   return studentsMarks;
 }
@@ -52,19 +52,22 @@ const getMarks = getStudentsMarks(students, marks)
 
 console.log(getMarks);
 
+
 /* Task 4  Поставьте каждой паре случайную оценку(от 1 до 5) за проект(тут функция будет нечистой, 
   но не должна мутировать массив): [["Саша и Лена", "Теория автоматов", 5], [...], [...]] */
 
-  function getRandomMarks(pair){
+  function getRandomMarks(pairsWithThemes){
     let pairMarks = [];
     for (let i = 0; i < pair.length; i++) {
-        pairMarks[i] = [pair[i], getMarks[i]].join(" - ");
+        pairMarks[i] = pairsWithThemes[i].concat(Math.floor(Math.random() * 5) + 1);
     }
     return pairMarks;
 }
-const pairMarks = getRandomMarks(pair);
+const pairMarks = getRandomMarks(pairsWithThemes);
 
 console.log(pairMarks);
+
+
 
 document.writeln(` <b>1 // Студенти по парах:</b> ${pair.join(" ; ")}.<br>`)
 document.writeln(` <b>2 // Пари - Теми:</b> ${pairsWithThemes.join(" ; ")}.<br>`)
