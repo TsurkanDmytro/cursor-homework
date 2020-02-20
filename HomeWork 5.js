@@ -100,3 +100,23 @@ function getDividedByFive(...numbers) {
     return filteredNumbers;
 }
 console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
+
+/*  TASK 8:
+ Создайте функцию replaceBadWords(string) – которая 1) разобьет фразу на слова, 2) заменит плохие слова на звездочки (*). 
+При решении этого задания необходимо разбить массив на слова с помощью функции .split(" "), после чего массив необходимо будет склеить .join(" ") 
+Плохие слова: shit и fuck. Предусмотрите возможность расширять список этих слов в будущем.
+Пример: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing kidding?" Пример: replaceBadWords("Holy shit!") -> "Holy ****!" 
+Пример: replaceBadWords("It's bullshit!") -> "It's bull****!" */
+
+
+function replaceObsceneWords(string) {
+    let obsceneWords = ['shit', 'fuck'];
+    let arrayWords = string.split(' ');
+    for(let i = 0; i < obsceneWords.length; i++) {
+        arrayWords = arrayWords.map((value) => {
+            return value.replace(obsceneWords[i], '*'.repeat(obsceneWords[i].length));
+        });
+    }
+    return arrayWords.join(' ');
+}
+console.log(replaceObsceneWords('Are you fucking kidding? That is a shit!'));
