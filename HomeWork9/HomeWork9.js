@@ -21,15 +21,6 @@ function removeBlocks() {
 }
 
 
-
-/* function setColors() {
-  document.querySelectorAll('.blocks').forEach(value => {
-      value.style.transition = '1s';
-      value.style.backgroundColor = getRandomColor();
-
-  });
- */
-
 function generateBlocksInterval() {
   removeBlocks();
   let interval = setInterval(() => {
