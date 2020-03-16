@@ -54,7 +54,7 @@ function getMySalary(country)
 {
   let result = {};
   result.salary = Math.floor(1500 + Math.random() * (2000 + 1 - 1500));
-  result.taxes = Math.floor(country.tax * result.salary);
+  result.taxes = Math.floor(this.tax * result.salary);
   result.profit = result.salary - result.taxes;
   return result;
 }
