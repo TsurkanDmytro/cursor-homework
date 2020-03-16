@@ -18,24 +18,29 @@ get getInfo() {
   return console.log ('Студент: ' + this.fullName + '; Університет: ' + this.university + '; Курс: ' + this.course + ';');
 }
 
+
+
 /* Task 3 
 Создайте геттер оценок this.marks, который возвращает массив оценок студента [5, 4, 4, 5] */
 
-set studentMarks(number) {
-  if (this.marks === null) {
-      return null;
-  } else {
-      this.marks.push(number);
-  }
+
+get getMarks() {
+  return console.log(this.marks);
 }
 
 /* Task 4 
 Создайте сеттер оценок this.marks = 5, который позволяет поставить оценку студенту. После того, как оценка поставлена, 
 геттер должен вернуть массив this.marks -> [5, 4, 4, 5, 5]*/
 
-get getMarks() {
-  return console.log(this.marks);
+set setMarks(number) {
+  if (this.marks === null) {
+      return null;
+  } else {
+      this.marks.push(5);
+      console.log(this.marks)
+  }
 }
+
 
 /* Task 5
 Создайте метод получения среднего балла this.getAverageMark() -> 4.6 */
@@ -67,15 +72,30 @@ dismiss() {
 recover() {
   this.marks = [5, 4, 4, 5];
   return console.log('студента відновлено!');
+
 }
 }
+
+
 let dmytro = new Student('LNU Franko', 3, 'Dmytro Tsurkan');
+console.log('Task 2:');
 dmytro.getInfo;
+
+console.log('Task 3:');
 dmytro.getMarks;
-dmytro.dismiss();
-dmytro.getMarks;
+
+console.log('Task 4:')
 dmytro.setMarks = 5;
-console.log(dmytro.getAverageMark());
+
+
+console.log('Task 5:')
+console.log(dmytro.getAverageMark(Student.marks));
+
+console.log('Task 6:');
+dmytro.dismiss();
+
+
+console.log('Task 7:')
 dmytro.recover();
 
 
