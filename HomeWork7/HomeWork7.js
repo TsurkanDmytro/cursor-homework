@@ -50,14 +50,13 @@ console.log(getTotalTaxes.call(litva));
 генерируйте случайным образом в диапазоне 1500-2000. taxes – расчитывается в зависимости от от выбранной страны и значения salary.
 profit = salary - taxes; */
 
-function getMySalary(country) 
-{
-  let result = {};
-  result.salary = Math.floor(1500 + Math.random() * (2000 + 1 - 1500));
-  result.taxes = Math.floor(this.tax * result.salary);
-  result.profit = result.salary - result.taxes;
-  return result;
+console.log("Function 4:");
+function getMySalary( min, max ) {
+  let salary = Math.floor( min + Math.random() * ( max + 1 - min ));
+  let taxes  = salary * this.tax;
+  let profit = salary - taxes;
+  return console.log( 'My Salary: ', { salary, taxes, profit });
 }
-
-setInterval(() => console.log(getMySalary(ukraine)), 10000);
-console.log("Function 4:")
+let mySalary = getMySalary.bind( ukraine, 1500, 2000);
+mySalary();
+setInterval( mySalary, 10000 );
